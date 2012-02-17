@@ -14,8 +14,9 @@
 			<description>
 				<?php if( $p['image'] ) { ?>
 					&lt;a href=&quot;http://<?php echo Asaph_Config::$domain.$p['image']; ?>&quot;&gt;
-						&lt;img src=&quot;http://<?php echo Asaph_Config::$domain.$p['thumb']; ?>&quot; alt=&quot;&quot;/&gt;
-					&lt;/a&gt;
+						&lt;img src=&quot;http://<?php echo Asaph_Config::$domain.$p['image']; ?>&quot; alt=&quot;&quot;/&gt;
+					&lt;/a&gt;&lt;br/&gt;
+					&lt;em&gt;via &lt;a href=&quot;<?php echo $p['source']; ?>&quot;&gt;<?php echo $p['sourceDomain']; ?>&lt;/a&gt;&lt;/em&gt;
 				<?php } else { ?>
 					&lt;p&gt;
 						<?php echo htmlspecialchars(nl2br($p['title'])); ?>
@@ -23,6 +24,7 @@
 				<?php } ?>
 			</description>
 			<pubDate><?php echo date('r', $p['created']); ?></pubDate>
+			<author><?php echo $p['user']; ?></author>
 			<guid isPermaLink="false"><?php echo ASAPH_BASE_URL.$p['id']; ?></guid>
 		</item>
 	<?php } ?>
