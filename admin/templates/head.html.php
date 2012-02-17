@@ -12,6 +12,7 @@
 	<h1>Asaph</h1>
 	<a href="?posts">Posts</a>
 	<a href="?users">Users</a>
+	<a href="?conf">Configuration</a>
 	
 	
 	<a class="logout" href="?logout">Logout</a>
