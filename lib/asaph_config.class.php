@@ -23,6 +23,27 @@ class Asaph_Config {
 		'feed' => 'templates/rss.xml.php'
 	);
 	
+	public static $feed_url = ASAPH_LINK_PREFIX . "feed";
+	
+	public static $twitter_account = "http://www.twitter.com/YOUR_TWITTER_ACCOUNT";
+	
+	// public static $link1 = array(
+	//	'title'		=> 'Google',
+	//	'url'		=> 'http://www.google.com'
+	//);
+
+	public static $link1 = array();
+	
+	public static $link2 = array();
+	
+	public static $link3 = array();
+	
+	// URL to ping
+	public static $urlToPing = "http://www.google.com";
+	
+	// Google Analytics
+	public static $googleAnalytics = "";
+	
 	// Settings for your mysql database
 	public static $db = array(
 		'host' => 'localhost',

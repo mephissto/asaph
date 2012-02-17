@@ -11,6 +11,9 @@ class Asaph_Post extends Asaph_Admin {
 		parent::__construct();
 	}
 	
+	private function pingFeedburner() {
+		@file_get_contents(Asaph_Config::$urlToPing);
+	}
 	
 	public function postUrl( $url, $title ) {
 		if( !$this->userId ) {
@@ -26,6 +29,7 @@ class Asaph_Post extends Asaph_Admin {
 			'image' => '',
 			'title' => trim($title)
 		));
+		$this->pingFeedburner();
 		return true;
 	}
 	
@@ -95,7 +99,7 @@ class Asaph_Post extends Asaph_Admin {
 			'image' => $imageName,
 			'title' => $title
 		));
-		
+		$this->pingFeedburner();
 		return true;
 	}
 	
