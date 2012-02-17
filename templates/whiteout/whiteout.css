@@ -2,14 +2,15 @@ body {
 	color: #ccc;
 	font-family: trebuchet ms, arial, verdana, deja vu;
 	font-size: 10pt;
-	background-color: #fff;
+	/*background-color: #3f3f3f;*/
+	background: url(bg.png);
 	width: 828px;
 	margin: 2em auto;
 	padding: 0;
 }
 
 div#title {
-	background-color: #fcfcfc;
+	background-color: #222;
 	margin: 0 10px 0 10px;
 	position: relative;
 }
@@ -30,7 +31,7 @@ h1 {
 }
 
 a {
-	color: #00adef;
+	color: #3EA8F7;
 	text-decoration: none;
 }
 
@@ -75,7 +76,7 @@ div.post {
 	}
 	
 	div.postInfo {
-		padding: 0.2em;
+		/*padding: 0.2em;*/
 		font-style: italic;
 		position: absolute;
 		bottom: 0;

@@ -1,18 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title><?php echo htmlspecialchars( Asaph_Config::$title ); ?></title>
-	<link rel="stylesheet" type="text/css" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/whiteout.css" />
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo ASAPH_LINK_PREFIX; ?>feed" />
-	<link rel="Shortcut Icon" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/asaph.ico" />
-	<script type="text/javascript" src="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/whitebox.js"></script>
-</head>
+<?php include_once ('header.html.php');?>
 <body>
 
-<div id="title">
-	<em><a href="<?php echo ASAPH_LINK_PREFIX; ?>about">about</a></em>
-	<h1><a href="<?php echo Asaph_Config::$absolutePath; ?>"><?php echo htmlspecialchars( Asaph_Config::$title ); ?></a></h1>
-</div>
+<?php include_once ('menu.html.php')?>
 
 <?php foreach( $posts as $p ) { ?>
 	<div class="post">
@@ -26,7 +15,7 @@
 			</p>
 		<?php } ?>
 		<div class="postInfo">
-			via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
+			<?php echo date( 'j/n/y', $p['created'] ); ?> via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
 		</div>
 	</div>
 <?php } ?>
@@ -38,6 +27,13 @@
 	</div>
 	
 	<div class="pageLinks">
+
+		<?php if( $pages['current'] > 1) { ?>
+			<a href="<?php echo ASAPH_LINK_PREFIX ?>page/1">&nbsp;&laquo;&nbsp;</a>
+		<?php } else { ?>
+			&nbsp;&laquo;&nbsp;
+		<?php } ?>
+
 		<?php if( $pages['prev'] ) { ?>
 			<a href="<?php echo ASAPH_LINK_PREFIX.'page/'.$pages['prev']?>">&laquo; prev</a>
 		<?php } else { ?>
@@ -49,6 +45,13 @@
 		<?php } else { ?>
 			next &raquo;
 		<?php } ?>
+		
+		<?php if( $pages['current'] < $pages['total'] ) { ?>
+			<a href="<?php echo ASAPH_LINK_PREFIX.'page/'.$pages['total']?>">&nbsp;&raquo;&nbsp;</a>
+		<?php } else {?>
+			&nbsp;&raquo;&nbsp;
+		<?php } ?>
+	
 	</div>
 	<div class="clear"></div>
 </div>
