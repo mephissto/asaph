@@ -20,6 +20,10 @@ else if( $asaphAdmin->checkLogin() ) {
 		header( 'Location: '.Asaph_Config::$absolutePath.'admin/' );
 		exit;
 	}
+	// Conf
+	else if( isset($_GET['conf'])) {
+		include( ASAPH_PATH.'admin/templates/config.html.php');
+	}
 	
 	// Users
 	else if( isset($_GET['users']) ) {
