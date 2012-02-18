@@ -1,21 +1,21 @@
 <?php
 
 class Asaph_Config {
-	
+
 	// This title is used in templates and the rss feed
 	public static $title = 'Asaph ~ Phoboslab';
-	
+
 	// Domain name and path where Asaph is installed in
 	public static $domain = 'subdomain.yourdomain.com';
 	public static $absolutePath = '/asaph/';
-	
+
 	// If you want to be able to move/edit/delete generated files and folders 
 	// with your ftp-client, it's likely you'll have to set chmod to 0777
 	public static $defaultChmod = 0777;
-	
+
 	public static $postsPerPage = 9;
 	public static $adminPostsPerPage = 9;
-	
+
 	// Templates
 	public static $templates = array(
 		'posts' => 'templates/whiteout/posts.html.php',
