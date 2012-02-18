@@ -12,7 +12,8 @@ class Asaph_Post extends Asaph_Admin {
 	}
 	
 	private function pingFeedburner() {
-		@file_get_contents(Asaph_Config::$urlToPing);
+		if(!empty(Asaph_Config::$urlToPing))
+			@file_get_contents(Asaph_Config::$urlToPing);
 	}
 	
 	public function postUrl( $url, $title ) {
