@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title><?php echo htmlspecialchars( Asaph_Config::$title ); ?></title>
-	<link rel="stylesheet" type="text/css" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/whiteout.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout-moded/whiteout.css" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo Asaph_Config::$feed_url; ?>" />
-	<link rel="Shortcut Icon" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/asaph.png" />
-	<script type="text/javascript" src="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout/whitebox.js"></script>
+	<link rel="Shortcut Icon" href="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout-moded/asaph.png" />
+	<script type="text/javascript" src="<?php echo Asaph_Config::$absolutePath; ?>templates/whiteout-moded/whitebox.js"></script>
 <?php echo Asaph_Config::$googleAnalytics; ?>
 </head>
