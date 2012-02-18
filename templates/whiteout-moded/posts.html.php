@@ -15,7 +15,7 @@
 			</p>
 		<?php } ?>
 		<div class="postInfo">
-			<?php echo date( 'j/n/y', $p['created'] ); ?> via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
+			<?php echo date( Asaph_Config::$date_format, $p['created'] ); ?> via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
 		</div>
 	</div>
 <?php } ?>

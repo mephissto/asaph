@@ -23,6 +23,8 @@ class Asaph_Config {
 		'feed' => 'templates/rss.xml.php'
 	);
 	
+	public static $date_format = '';
+	
 	// If you set an URL here, it will override the default one but the default will still be available.
 	// Left it empty if you want the default or replace by the URL you want to use (a feedburner one for example).
 	public static $feed_url = "";
