@@ -23,13 +23,19 @@ class Asaph_Config {
 		'feed' => 'templates/rss.xml.php'
 	);
 	
-	public static $date_format = '';
+	// Date format to display
+	public static $date_format = 'j/n/y';
 	
 	// If you set an URL here, it will override the default one but the default will still be available.
 	// Left it empty if you want the default or replace by the URL you want to use (a feedburner one for example).
 	public static $feed_url = "";
 	
-	public static $twitter_account = "http://www.twitter.com/YOUR_TWITTER_ACCOUNT";
+	// The URL to your twitter account, if you don't want to show your twitter account
+	// just left it empty if you don't want to display it
+	public static $twitter_account = "";
+	
+	// If you want to add specific link, just set the variables $link1 $link2 and $link3
+	// and here is an example how to set the variables
 	
 	// public static $link1 = array(
 	//	'title'		=> 'Google',
