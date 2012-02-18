@@ -20,6 +20,7 @@
 			<li><?php echo $p['user']; ?></li>
 			<li><?php echo date('F j, Y', $p['created']); ?></li>
 			<li>via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a></li>
+			<li><a href="<?php echo ASAPH_LINK_PREFIX . "post/" . $p['id'] ;?>">link &rarr;</a></li>
 		</ul>
 		<?php if( $p['image'] ) { ?>
 			<a href="<?php echo $p['image']; ?>" rel="whitebox" title="<?php echo $p['title']; ?>">
