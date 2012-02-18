@@ -28,6 +28,30 @@ class Asaph {
 		);
 	}
 	
+	public function getPost( $postId ) {
+		
+		$post = $this->db->query( 
+			'SELECT SQL_CALC_FOUND_ROWS
+				UNIX_TIMESTAMP(p.created) as created, 
+				p.id, p.source, p.thumb, p.image, p.title, u.name AS user
+			FROM 
+				'.ASAPH_TABLE_POSTS.' p
+			LEFT JOIN '.ASAPH_TABLE_USERS.' u 
+				ON u.id = p.userId
+			WHERE p.id = :1',
+			$postId
+		);
+		
+		if(!$post)
+			return false;
+		
+		list($post) = $post;
+		
+		$this->processPost( $post );
+
+		return $post;
+		
+	}
 	
 	public function getPosts( $page ) {
 		$this->currentPage = abs( intval($page) );
