@@ -15,9 +15,13 @@ if( isset($_GET['rw']) ) {
 	$params = empty($_GET) ? array() : explode( '/', key($_GET) );
 }
 
-
+// check if install has been made
+$db = new DB(Asaph_Config::$db['host'], Asaph_Config::$db['database'], Asaph_Config::$db['user'], Asaph_Config::$db['password']);
+if(!$db->isDbConfigured()) {
+	echo "Couldn't establish link to database-server.<br/> If you don't have configured Asaph, <a href='".ASAPH_INSTALL."'>do it here</a>";
+}
 // about page
-if( !empty($params[0]) && $params[0] == 'about' ) {
+else if( !empty($params[0]) && $params[0] == 'about' ) {
 	include( ASAPH_PATH.Asaph_Config::$templates['about'] );
 }
 // feed

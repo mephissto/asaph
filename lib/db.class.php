@@ -16,13 +16,21 @@ class DB {
 		$this->pass = $pass;
 	}
 	
-	
 	private function connect() {
 		$this->link = @mysql_connect( $this->host, $this->user, $this->pass )
 			or die( "Couldn't establish link to database-server: ".$this->host );
 		mysql_select_db( $this->db )
 			or die( "Couldn't select Database: ".$this->db );
 		mysql_query( 'SET NAMES utf8', $this->link );
+	}
+
+	public function isDbConfigured() {
+		$db = @mysql_connect( $this->host, $this->user, $this->pass );
+		if(!$db) {
+			return false;
+		}
+		@mysql_close($db);
+		return true;
 	}
 	
 	

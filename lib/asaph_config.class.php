@@ -23,7 +23,9 @@ class Asaph_Config {
 		'feed' => 'templates/rss.xml.php'
 	);
 	
-	public static $feed_url = ASAPH_LINK_PREFIX . "feed";
+	// If you set an URL here, it will override the default one but the default will still be available.
+	// Left it empty if you want the default or replace by the URL you want to use (a feedburner one for example).
+	public static $feed_url = "";
 	
 	public static $twitter_account = "http://www.twitter.com/YOUR_TWITTER_ACCOUNT";
 	
@@ -73,10 +75,15 @@ define( 'ASAPH_BASE_URL',		'http://'.Asaph_Config::$domain.Asaph_Config::$absolu
 define( 'ASAPH_POST_PHP',		ASAPH_BASE_URL.'admin/post.php' );
 define( 'ASAPH_POST_JS',		ASAPH_BASE_URL.'admin/post.js.php' );
 define( 'ASAPH_POST_CSS',		ASAPH_BASE_URL.'admin/templates/post.css' );
+define( 'ASAPH_INSTALL',		ASAPH_BASE_URL.'admin/install.php' );
 
 if( function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc() ) {
 	$_GET = array_map( 'stripslashes', $_GET );
 	$_POST = array_map( 'stripslashes', $_POST );
+}
+
+if( empty(Asaph_Config::$feed_url) ) {
+	Asaph_Config::$feed_url = ASAPH_BASE_URL.'?feed';
 }
 
 ?>
