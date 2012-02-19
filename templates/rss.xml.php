@@ -10,7 +10,8 @@
 	<?php foreach( $posts as $p ) { ?>
 		<item>
 			<title><?php echo $p['title']; ?></title>
-			<link><?php echo $p['source']; ?></link>
+			<link><?php echo "http://".Asaph_Config::$domain.Asaph_Config::$absolutePath."post/".$p['id']; ?></link>
+			.$p['image']; ?>
 			<description>
 				<?php if( $p['image'] ) { ?>
 					&lt;a href=&quot;http://<?php echo Asaph_Config::$domain.$p['image']; ?>&quot;&gt;
