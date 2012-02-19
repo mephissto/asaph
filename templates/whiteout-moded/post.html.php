@@ -3,7 +3,30 @@
 
 <?php include_once ('menu.html.php')?>
 
-Error 404 : the page you are looking for does not exist.
+<div class="singlePost">
+	<?php if( $post['image'] ) { ?>
+		<h2><?php echo nl2br($post['title']); ?></h2>
+		<div class="singlePostInfo">
+			Posted by <?php echo $post['user']; ?> - <?php echo date( Asaph_Config::$date_format, $post['created'] ); ?><br/>
+			via: <a href="<?php echo $post['source']; ?>"><?php echo $post['sourceDomain']; ?></a>
+		</div>
+		<br/>
+		<a href="<?php echo $post['image']; ?>" rel="whitebox" title="<?php echo $post['title']; ?>">
+			<img src="<?php echo $post['thumb']; ?>" alt="<?php echo $post['title']; ?>"/>
+		</a>
+	<?php } else { ?>
+		<p>
+			<a href="<?php echo $post['source']; ?>"><?php echo nl2br($post['title']); ?></a>
+		</p>
+	<?php } ?>
+</div>
+<div class="clear"></div>
+
+<div id="pages">
+	<div class="pageInfo">
+		<a href="javascript:history.back()">&larr; back</a>
+	</div>
+</div>
 
 </body>
 </html>

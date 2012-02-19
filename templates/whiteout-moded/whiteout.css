@@ -83,6 +83,31 @@ div.post {
 		left: 0;
 	}
 	
+div.singlePost {
+	float: left;
+	width: 256px;
+	height: auto;
+	overflow: hidden;
+	margin: 13px 10px;
+	margin-left: 20px; 
+	position: relative;
+	display: inline; /* JESUS FUCKING IE */
+}
+	
+	div.singlePostInfo {
+		font-style: italic;
+	}
+	
+div.error {
+	float: left;
+	height: auto;
+	overflow: hidden;
+	margin: 13px 10px;
+	margin-left: 20px; 
+	position: relative;
+	display: inline; /* JESUS FUCKING IE */
+}
+	
 div#pages {
 	margin-top: 1em;
 }
