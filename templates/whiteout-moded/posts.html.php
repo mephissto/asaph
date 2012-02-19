@@ -6,7 +6,7 @@
 <?php foreach( $posts as $p ) { ?>
 	<div class="post">
 		<?php if( $p['image'] ) { ?>
-			<a href="<?php echo $p['image']; ?>" rel="prettyPhoto">
+			<a href="<?php echo $p['image']; ?>" rel="prettyPhoto" title="">
 				<img src="<?php echo $p['thumb']; ?>" alt="<?php echo $p['title']; ?>"/>
 			</a>
 		<?php } else { ?>
@@ -58,7 +58,10 @@
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto();
+    $("a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'facebook',
+    	social_tools:false
+    });
   });
 </script>
 
