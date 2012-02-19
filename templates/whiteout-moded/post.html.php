@@ -11,8 +11,8 @@
 			via: <a href="<?php echo $post['source']; ?>"><?php echo $post['sourceDomain']; ?></a>
 		</div>
 		<br/>
-		<a href="<?php echo $post['image']; ?>" rel="whitebox" title="<?php echo $post['title']; ?>">
-			<img src="<?php echo $post['thumb']; ?>" alt="<?php echo $post['title']; ?>"/>
+		<a href="<?php echo $post['image']; ?>" title="<?php echo $post['title']; ?>">
+			<img src="<?php echo $post['image']; ?>" alt="<?php echo $post['title']; ?>"/>
 		</a>
 	<?php } else { ?>
 		<p>
