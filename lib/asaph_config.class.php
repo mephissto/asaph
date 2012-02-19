@@ -18,10 +18,10 @@ class Asaph_Config {
 
 	// Templates
 	public static $templates = array(
-		'posts' 	=> 'templates/stickney/posts.html.php',
-		'about' 	=> 'templates/stickney/about.html.php',
-		'post' 		=> 'templates/stickney/post.html.php',
-		'404'		=> 'templates/stickney/404.html.php',
+		'posts' 	=> 'templates/whiteout/posts.html.php',
+		'about' 	=> 'templates/whiteout/about.html.php',
+		'post' 		=> 'templates/whiteout/post.html.php',
+		'404'		=> 'templates/whiteout/404.html.php',
 		'feed' 		=> 'templates/rss.xml.php'
 	);
 	
