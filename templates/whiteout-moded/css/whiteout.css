@@ -3,7 +3,7 @@ body {
 	font-family: trebuchet ms, arial, verdana, deja vu;
 	font-size: 10pt;
 	/*background-color: #3f3f3f;*/
-	background: url(bg.png);
+	background: url(../bg.png);
 	width: 828px;
 	margin: 2em auto;
 	padding: 0;

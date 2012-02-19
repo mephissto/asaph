@@ -6,7 +6,7 @@
 <?php foreach( $posts as $p ) { ?>
 	<div class="post">
 		<?php if( $p['image'] ) { ?>
-			<a href="<?php echo $p['image']; ?>" rel="whitebox" title="<?php echo $p['title']; ?>">
+			<a href="<?php echo $p['image']; ?>" rel="prettyPhoto">
 				<img src="<?php echo $p['thumb']; ?>" alt="<?php echo $p['title']; ?>"/>
 			</a>
 		<?php } else { ?>
@@ -55,6 +55,12 @@
 	</div>
 	<div class="clear"></div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
 
 </body>
 </html>
