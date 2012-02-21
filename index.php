@@ -1,5 +1,5 @@
-<?php 
-
+<?php
+session_start();
 define( 'ASAPH_PATH', '' );
 require_once( ASAPH_PATH.'lib/asaph.class.php' );
 
@@ -32,6 +32,7 @@ else if( !empty($params[0]) && $params[0] == 'feed' ) {
 // Post
 else if( !empty($params[0]) && $params[0] == 'post' && !empty($params[1]) ) {
 	$post = $params[1];
+	$currentPage = (isset($_SESSION['currentPage']) && !empty($_SESSION['currentPage'])) ? $_SESSION['currentPage'] : 1;
 	$asaph = new Asaph();
 	$post = $asaph->getPost($post);
 	if(!$post)
@@ -42,7 +43,8 @@ else if( !empty($params[0]) && $params[0] == 'post' && !empty($params[1]) ) {
 // blog
 else {
 	$page = !empty($params[1]) ? $params[1]-1 : 0;
-	
+	$session_page = $page+1;
+    $_SESSION['currentPage'] = $session_page;
 	$asaph = new Asaph( Asaph_Config::$postsPerPage );
 	$posts = $asaph->getPosts( $page );
 	$pages = $asaph->getPages();
