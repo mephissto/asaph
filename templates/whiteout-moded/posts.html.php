@@ -15,7 +15,7 @@
 			</p>
 		<?php } ?>
 		<div class="postInfo">
-			<a href="<?php echo ASAPH_LINK_PREFIX . "post/" . $p['id'] ;?>">&#35;</a> via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
+			<a href="<?php echo $asaph->getPostUrl($p); ?>">&#35;</a> via: <a href="<?php echo $p['source']; ?>"><?php echo $p['sourceDomain']; ?></a>
 		</div>
 	</div>
 <?php } ?>

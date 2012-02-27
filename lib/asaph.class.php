@@ -12,6 +12,7 @@ $asaphPosts = $asaph->getPosts( $pageToFetch ); */
 
 require_once( ASAPH_PATH.'lib/asaph_config.class.php' );
 require_once( ASAPH_PATH.'lib/db.class.php' );
+require_once( ASAPH_PATH.'lib/formatting.class.php');
 
 class Asaph {
 	protected $db = null;
@@ -123,6 +124,10 @@ class Asaph {
 				.$datePath
 				.$post['image'];
 		}
+	}
+	
+	public function getPostUrl($post){
+		return ASAPH_LINK_PREFIX . "post/" . date( 'Y/m/d/', $post['created'] ) . Format::sanitize($post['title']) . "/" . $post['id'];
 	}
 }
 

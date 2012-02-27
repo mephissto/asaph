@@ -197,6 +197,7 @@ class Asaph_Post extends Asaph_Admin {
 		imageDestroy( $orig );
 		return true;
 	}
+	
 }
 
 ?>

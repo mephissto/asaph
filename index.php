@@ -30,8 +30,8 @@ else if( !empty($params[0]) && $params[0] == 'feed' ) {
 	include( ASAPH_PATH.Asaph_Config::$templates['feed'] );
 }
 // Post
-else if( !empty($params[0]) && $params[0] == 'post' && !empty($params[1]) ) {
-	$post = $params[1];
+else if( !empty($params[0]) && $params[0] == 'post' && !empty($params[5]) ) {
+	$post = $params[5];
 	$currentPage = (isset($_SESSION['currentPage']) && !empty($_SESSION['currentPage'])) ? $_SESSION['currentPage'] : 1;
 	$asaph = new Asaph();
 	$post = $asaph->getPost($post);
