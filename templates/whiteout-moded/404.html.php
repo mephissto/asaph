@@ -13,7 +13,7 @@
 
 <div id="pages">
 	<div class="pageInfo">
-		<a href="javascript:history.back()">&larr; back</a>
+		<a href="<?php echo ASAPH_LINK_PREFIX.'page/'.$currentPage; ?>">&larr; back</a>
 	</div>
 </div>
 
